@@ -35,6 +35,35 @@ struct ContentView: View {
                     
                     Spacer()
                     
+                    ZStack {
+                        Circle()
+                            .stroke(lineWidth: 15)
+                            .foregroundColor(.gray)
+                            .opacity(0.3)
+                        
+                        Circle()
+                            .trim(
+                                from: 0,
+                                to: min(
+                                    (viewModel.progress * viewModel.maxProgress) / 100,
+                                    1))
+                            .stroke(
+                                LinearGradient(
+                                    colors: [.orange, .red],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing),
+                                style: StrokeStyle(
+                                    lineWidth: 20,
+                                    lineCap: .round,
+                                    lineJoin: .round)
+                                )
+                            .rotationEffect(Angle(degrees: 270))
+                            .animation(Animation.linear(duration: viewModel.timerDuration), value: viewModel.progress)
+                    }
+                    .frame(width: 150, height: 150)
+                    
+                    Spacer()
+                    
                     OptionGridView(viewModel: viewModel)
                 }
             }

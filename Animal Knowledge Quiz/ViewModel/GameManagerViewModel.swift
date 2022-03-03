@@ -17,6 +17,35 @@ class GameManagerViewModel: ObservableObject {
     
     @Published var model = GameManagerViewModel.createGameModel(index: GameManagerViewModel.currentIndex)
     
+    var timer = Timer()
+    var timerDuration: Double = 1
+    var maxProgress: CGFloat = 10
+    
+    @Published var progress: CGFloat = 0
+    
+    init() {
+        start()
+    }
+    
+    func start() {
+        timer = Timer.scheduledTimer(withTimeInterval: timerDuration, repeats: true, block: { [weak self] _ in
+            guard let self = self else { return }
+            
+            if self.progress >= self.maxProgress {
+                self.model.quizCompleted = true
+                self.model.quizWinningStatus = false
+                self.reset()
+            } else {
+                self.progress += 1
+            }
+        })
+    }
+    
+    func reset() {
+        timer.invalidate()
+        progress = 0
+    }
+    
     func verifyAnswer(selectedOption: QuizOption) {
         if let index = model.quizModel.optionList.firstIndex(where: { $0.optionId == selectedOption.optionId }) {
             let isMatched = selectedOption.optionId == model.quizModel.answer
