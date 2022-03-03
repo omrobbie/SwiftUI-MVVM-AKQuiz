@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let viewModel: GameManagerViewModel
+    @ObservedObject var viewModel: GameManagerViewModel
     
     var body: some View {
         ZStack {
@@ -23,7 +23,7 @@ struct ContentView: View {
                 ReusableText(text: "Animal Knowledge Quiz!", size: 30)
                     .padding()
                 
-                ReusableText(text: viewModel.data.question, size: 25)
+                ReusableText(text: viewModel.model.quizModel.question, size: 25)
                     .lineLimit(3)
                     .frame(width: UIScreen.main.bounds.size.width - 20, height: 60)
                     .multilineTextAlignment(.center)

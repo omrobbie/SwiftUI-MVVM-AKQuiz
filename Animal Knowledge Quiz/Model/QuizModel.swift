@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct Quiz {
-    let currentQuestionIndex: Int
-    let quizModel: QuizModel
+    var currentQuestionIndex: Int
+    var quizModel: QuizModel
 }
 
 struct QuizModel {
     let question: String
     let answer: String
-    let optionList: [QuizOption]
+    var optionList: [QuizOption]
 }
 
 struct QuizOption: Identifiable {

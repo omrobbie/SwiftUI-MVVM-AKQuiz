@@ -7,8 +7,22 @@
 
 import SwiftUI
 
-class GameManagerViewModel {
-    var data: QuizModel = quizData[0]
+class GameManagerViewModel: ObservableObject {
+    
+    static var currentIndex: Int = 0
+    
+    static func createGameModel(index: Int) -> Quiz {
+        Quiz(currentQuestionIndex: index, quizModel: quizData[index])
+    }
+    
+    @Published var model = GameManagerViewModel.createGameModel(index: GameManagerViewModel.currentIndex)
+    
+    func verifyAnswer(selectedOption: QuizOption) {
+        if let index = model.quizModel.optionList.firstIndex(where: { $0.optionId == selectedOption.optionId }) {
+            model.quizModel.optionList[index].isSelected = true
+            model.quizModel.optionList[index].isMatched = selectedOption.optionId == model.quizModel.answer
+        }
+    }
 }
 
 extension GameManagerViewModel {

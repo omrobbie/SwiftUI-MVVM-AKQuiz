@@ -14,8 +14,11 @@ struct OptionGridView: View {
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
-            ForEach(viewModel.data.optionList) { quizOption in
+            ForEach(viewModel.model.quizModel.optionList) { quizOption in
                 OptionCardView(option: quizOption)
+                    .onTapGesture {
+                        viewModel.verifyAnswer(selectedOption: quizOption)
+                    }
             }
         }
     }
