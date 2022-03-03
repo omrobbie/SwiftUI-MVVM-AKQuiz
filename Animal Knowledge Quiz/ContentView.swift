@@ -16,6 +16,22 @@ struct ContentView: View {
                 .ignoresSafeArea()
             LinearGradient(colors: [.purple.opacity(0.4), .blue.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
+            
+            VStack {
+                Text("Animal Knowledge Quiz!")
+                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                    .shadow(color: .purple, radius: 2, x: 0, y: 3)
+                    .padding()
+                
+                Text("My Question")
+                    .font(.system(size: 25, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                    .shadow(color: .purple, radius: 2, x: 0, y: 3)
+                    .padding()
+                
+                Spacer()
+            }
         }
     }
 }
