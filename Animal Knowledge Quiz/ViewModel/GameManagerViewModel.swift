@@ -19,8 +19,25 @@ class GameManagerViewModel: ObservableObject {
     
     func verifyAnswer(selectedOption: QuizOption) {
         if let index = model.quizModel.optionList.firstIndex(where: { $0.optionId == selectedOption.optionId }) {
+            let isMatched = selectedOption.optionId == model.quizModel.answer
             model.quizModel.optionList[index].isSelected = true
-            model.quizModel.optionList[index].isMatched = selectedOption.optionId == model.quizModel.answer
+            model.quizModel.optionList[index].isMatched = isMatched
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                guard let self = self else { return }
+                if isMatched {
+                    if (GameManagerViewModel.currentIndex < GameManagerViewModel.quizData.count - 1) {
+                        GameManagerViewModel.currentIndex += 1
+                        self.model = GameManagerViewModel.createGameModel(index: GameManagerViewModel.currentIndex)
+                    } else {
+                        self.model.quizCompleted = true
+                        self.model.quizWinningStatus = true
+                    }
+                }
+                
+                self.model.quizModel.optionList[index].isSelected = false
+                self.model.quizModel.optionList[index].isMatched = false
+            }
         }
     }
 }

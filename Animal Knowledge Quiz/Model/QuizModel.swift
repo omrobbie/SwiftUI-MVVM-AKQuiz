@@ -10,6 +10,8 @@ import SwiftUI
 struct Quiz {
     var currentQuestionIndex: Int
     var quizModel: QuizModel
+    var quizCompleted: Bool = false
+    var quizWinningStatus: Bool = false
 }
 
 struct QuizModel {
@@ -19,11 +21,10 @@ struct QuizModel {
 }
 
 struct QuizOption: Identifiable {
-    var isSelected: Bool = false
-    var isMatched: Bool = false
-    
     let id: Int
     let optionId: String
     let option: String
     let color: Color
+    var isSelected: Bool = false
+    var isMatched: Bool = false
 }
