@@ -35,7 +35,7 @@ struct QuizCompletedView: View {
                          size: 30)
             
             Button {
-                
+                viewModel.restartGame()
             } label: {
                 HStack {
                     Image(systemName: "play.fill")

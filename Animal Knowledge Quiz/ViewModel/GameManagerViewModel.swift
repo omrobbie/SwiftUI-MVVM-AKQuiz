@@ -11,11 +11,12 @@ class GameManagerViewModel: ObservableObject {
     
     static var currentIndex: Int = 0
     
-    static func createGameModel(index: Int) -> Quiz {
-        Quiz(currentQuestionIndex: index, quizModel: quizData[index])
+    static func createGameModel() -> Quiz {
+        let index = GameManagerViewModel.currentIndex
+        return Quiz(currentQuestionIndex: index, quizModel: quizData[index])
     }
     
-    @Published var model = GameManagerViewModel.createGameModel(index: GameManagerViewModel.currentIndex)
+    @Published var model = GameManagerViewModel.createGameModel()
     
     var timer = Timer()
     var timerDuration: Double = 1
@@ -57,10 +58,11 @@ class GameManagerViewModel: ObservableObject {
                 if isMatched {
                     if (GameManagerViewModel.currentIndex < GameManagerViewModel.quizData.count - 1) {
                         GameManagerViewModel.currentIndex += 1
-                        self.model = GameManagerViewModel.createGameModel(index: GameManagerViewModel.currentIndex)
+                        self.model = GameManagerViewModel.createGameModel()
                     } else {
                         self.model.quizCompleted = true
                         self.model.quizWinningStatus = true
+                        self.reset()
                     }
                 }
                 
@@ -68,6 +70,12 @@ class GameManagerViewModel: ObservableObject {
                 self.model.quizModel.optionList[index].isMatched = false
             }
         }
+    }
+    
+    func restartGame() {
+        GameManagerViewModel.currentIndex = 0
+        model = GameManagerViewModel.createGameModel()
+        start()
     }
 }
 
