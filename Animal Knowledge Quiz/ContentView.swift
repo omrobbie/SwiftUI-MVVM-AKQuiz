@@ -59,6 +59,8 @@ struct ContentView: View {
                                 )
                             .rotationEffect(Angle(degrees: 270))
                             .animation(Animation.linear(duration: viewModel.timerDuration), value: viewModel.progress)
+                        
+                        ReusableText(text: String(Int(viewModel.progress)), size: 30)
                     }
                     .frame(width: 150, height: 150)
                     
