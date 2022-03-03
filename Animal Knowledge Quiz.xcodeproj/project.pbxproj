@@ -11,6 +11,7 @@
 		FC7722CA27D0847F00FAA81D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722C927D0847F00FAA81D /* ContentView.swift */; };
 		FC7722CC27D0848000FAA81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7722CB27D0848000FAA81D /* Assets.xcassets */; };
 		FC7722CF27D0848000FAA81D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7722CE27D0848000FAA81D /* Preview Assets.xcassets */; };
+		FC7722D727D08A3600FAA81D /* ReusableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722D627D08A3600FAA81D /* ReusableText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FC7722C927D0847F00FAA81D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC7722CB27D0848000FAA81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC7722CE27D0848000FAA81D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC7722D627D08A3600FAA81D /* ReusableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		FC7722C627D0847F00FAA81D /* Animal Knowledge Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				FC7722D527D08A2700FAA81D /* UI Components */,
 				FC7722C727D0847F00FAA81D /* Animal_Knowledge_QuizApp.swift */,
 				FC7722C927D0847F00FAA81D /* ContentView.swift */,
 				FC7722CB27D0848000FAA81D /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				FC7722CE27D0848000FAA81D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC7722D527D08A2700FAA81D /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				FC7722D627D08A3600FAA81D /* ReusableText.swift */,
+			);
+			path = "UI Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7722D727D08A3600FAA81D /* ReusableText.swift in Sources */,
 				FC7722CA27D0847F00FAA81D /* ContentView.swift in Sources */,
 				FC7722C827D0847F00FAA81D /* Animal_Knowledge_QuizApp.swift in Sources */,
 			);

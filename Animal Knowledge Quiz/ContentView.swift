@@ -18,17 +18,13 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Animal Knowledge Quiz!")
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .shadow(color: .purple, radius: 2, x: 0, y: 3)
+                ReusableText(text: "Animal Knowledge Quiz!", size: 30)
                     .padding()
                 
-                Text("My Question")
-                    .font(.system(size: 25, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .shadow(color: .purple, radius: 2, x: 0, y: 3)
-                    .padding()
+                ReusableText(text: "My Question", size: 25)
+                    .lineLimit(3)
+                    .frame(width: UIScreen.main.bounds.size.width - 20, height: 60, alignment: .center)
+                    .multilineTextAlignment(.center)
                 
                 Spacer()
             }
