@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel: GameManagerViewModel
     
+    let screenWidth = UIScreen.main.bounds.width
+    
     var body: some View {
         ZStack {
             Image("background")
@@ -19,18 +21,22 @@ struct ContentView: View {
             LinearGradient(colors: [.purple.opacity(0.4), .blue.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            VStack {
-                ReusableText(text: "Animal Knowledge Quiz!", size: 30)
-                    .padding()
-                
-                ReusableText(text: viewModel.model.quizModel.question, size: 25)
-                    .lineLimit(3)
-                    .frame(width: UIScreen.main.bounds.size.width - 20, height: 60)
-                    .multilineTextAlignment(.center)
-                
-                Spacer()
-                
-                OptionGridView(viewModel: viewModel)
+            if viewModel.model.quizCompleted {
+                QuizCompletedView(viewModel: viewModel)
+            } else {
+                VStack {
+                    ReusableText(text: "Animal Knowledge Quiz!", size: 30)
+                        .padding()
+                    
+                    ReusableText(text: viewModel.model.quizModel.question, size: 25)
+                        .lineLimit(3)
+                        .frame(width: screenWidth - 20)
+                        .multilineTextAlignment(.center)
+                    
+                    Spacer()
+                    
+                    OptionGridView(viewModel: viewModel)
+                }
             }
         }
     }
