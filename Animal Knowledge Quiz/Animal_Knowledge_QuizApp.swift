@@ -11,7 +11,7 @@ import SwiftUI
 struct Animal_Knowledge_QuizApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: GameManagerViewModel())
         }
     }
 }

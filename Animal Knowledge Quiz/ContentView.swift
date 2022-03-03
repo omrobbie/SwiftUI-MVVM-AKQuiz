@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let viewModel: GameManagerViewModel
+    
     var body: some View {
         ZStack {
             Image("background")
@@ -21,12 +23,14 @@ struct ContentView: View {
                 ReusableText(text: "Animal Knowledge Quiz!", size: 30)
                     .padding()
                 
-                ReusableText(text: "My Question", size: 25)
+                ReusableText(text: viewModel.data.question, size: 25)
                     .lineLimit(3)
-                    .frame(width: UIScreen.main.bounds.size.width - 20, height: 60, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.size.width - 20, height: 60)
                     .multilineTextAlignment(.center)
                 
                 Spacer()
+                
+                OptionGridView(viewModel: viewModel)
             }
         }
     }
@@ -34,6 +38,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: GameManagerViewModel())
     }
 }

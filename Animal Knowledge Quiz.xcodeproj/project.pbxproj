@@ -14,6 +14,7 @@
 		FC7722D727D08A3600FAA81D /* ReusableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722D627D08A3600FAA81D /* ReusableText.swift */; };
 		FC7722DA27D08AC900FAA81D /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722D927D08AC900FAA81D /* QuizModel.swift */; };
 		FC7722DD27D08B9F00FAA81D /* GameManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722DC27D08B9F00FAA81D /* GameManagerViewModel.swift */; };
+		FC7722DF27D08E5600FAA81D /* OptionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722DE27D08E5600FAA81D /* OptionGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FC7722D627D08A3600FAA81D /* ReusableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableText.swift; sourceTree = "<group>"; };
 		FC7722D927D08AC900FAA81D /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		FC7722DC27D08B9F00FAA81D /* GameManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerViewModel.swift; sourceTree = "<group>"; };
+		FC7722DE27D08E5600FAA81D /* OptionGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7722D627D08A3600FAA81D /* ReusableText.swift */,
+				FC7722DE27D08E5600FAA81D /* OptionGridView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7722DA27D08AC900FAA81D /* QuizModel.swift in Sources */,
+				FC7722DF27D08E5600FAA81D /* OptionGridView.swift in Sources */,
 				FC7722D727D08A3600FAA81D /* ReusableText.swift in Sources */,
 				FC7722CA27D0847F00FAA81D /* ContentView.swift in Sources */,
 				FC7722DD27D08B9F00FAA81D /* GameManagerViewModel.swift in Sources */,
