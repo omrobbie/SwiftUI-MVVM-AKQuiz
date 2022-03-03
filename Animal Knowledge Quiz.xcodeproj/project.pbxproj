@@ -13,6 +13,7 @@
 		FC7722CF27D0848000FAA81D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7722CE27D0848000FAA81D /* Preview Assets.xcassets */; };
 		FC7722D727D08A3600FAA81D /* ReusableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722D627D08A3600FAA81D /* ReusableText.swift */; };
 		FC7722DA27D08AC900FAA81D /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722D927D08AC900FAA81D /* QuizModel.swift */; };
+		FC7722DD27D08B9F00FAA81D /* GameManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7722DC27D08B9F00FAA81D /* GameManagerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		FC7722CE27D0848000FAA81D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC7722D627D08A3600FAA81D /* ReusableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableText.swift; sourceTree = "<group>"; };
 		FC7722D927D08AC900FAA81D /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		FC7722DC27D08B9F00FAA81D /* GameManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		FC7722C627D0847F00FAA81D /* Animal Knowledge Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				FC7722DB27D08B9300FAA81D /* ViewModel */,
 				FC7722D827D08AB500FAA81D /* Model */,
 				FC7722D527D08A2700FAA81D /* UI Components */,
 				FC7722C727D0847F00FAA81D /* Animal_Knowledge_QuizApp.swift */,
@@ -87,6 +90,14 @@
 				FC7722D927D08AC900FAA81D /* QuizModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FC7722DB27D08B9300FAA81D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FC7722DC27D08B9F00FAA81D /* GameManagerViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 				FC7722DA27D08AC900FAA81D /* QuizModel.swift in Sources */,
 				FC7722D727D08A3600FAA81D /* ReusableText.swift in Sources */,
 				FC7722CA27D0847F00FAA81D /* ContentView.swift in Sources */,
+				FC7722DD27D08B9F00FAA81D /* GameManagerViewModel.swift in Sources */,
 				FC7722C827D0847F00FAA81D /* Animal_Knowledge_QuizApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

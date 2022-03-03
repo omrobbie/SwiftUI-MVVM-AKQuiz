@@ -19,10 +19,11 @@ struct QuizModel {
 }
 
 struct QuizOption: Identifiable {
+    var isSelected: Bool = false
+    var isMatched: Bool = false
+    
     let id: Int
     let optionId: String
     let option: String
     let color: Color
-    let isSelected: Bool
-    let isMatched: Bool
 }
